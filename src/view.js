@@ -1,8 +1,8 @@
-export function open(store) {
+export function open (store) {
   return store.get('todo-view')
 }
 
-export async function apply(nodes, view, host) {
+export async function apply (nodes, view, host) {
   for (const { value } of nodes) {
     const entry = JSON.parse(value)
     if (entry.markDone !== undefined) {

@@ -2,7 +2,7 @@ import Hyperswarm from 'hyperswarm'
 import BlindPairing from 'blind-pairing'
 import { createInvite } from 'blind-pairing-core'
 
-export async function setupPairing(store) {
+export async function setupPairing (store) {
   const core = store.get({ name: 'main' })
   await core.ready()
   const key = core.key
@@ -19,19 +19,18 @@ export async function setupPairing(store) {
     const a = new BlindPairing(swarm)
     const m = a.addMember({
       discoveryKey,
-      async onadd(candidate) {
+      async onadd (candidate) {
         candidate.open(publicKey)
         candidate.confirm({ key })
       }
     })
     await m.flushed()
   } else {
-   const raw = process.argv.find(arg => arg.startsWith('invite:'))
+    const raw = process.argv.find(arg => arg.startsWith('invite:'))
     const base64 = raw.replace('invite:', '')
     const jsonStr = Buffer.from(base64, 'base64').toString()
     const parsed = JSON.parse(jsonStr)
     const invite = Buffer.from(parsed.data)
-
 
     const userData = Buffer.from('User B')
 
@@ -39,7 +38,7 @@ export async function setupPairing(store) {
     const c = b.addCandidate({
       invite,
       userData,
-      async onadd(result) {
+      async onadd (result) {
         console.log('✅ Joined shared base!')
       }
     })

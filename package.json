@@ -15,5 +15,8 @@
     "blind-pairing": "github:holepunchto/blind-pairing",
     "corestore": "github:holepunchto/corestore",
     "hyperswarm": "^4.11.7"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
   }
 }

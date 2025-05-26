@@ -7,7 +7,7 @@ const storeName = process.argv.find(a => a.startsWith('--store='))?.split('=')[1
 const store = new Corestore(`./${storeName}`)
 await store.ready()
 
-const { key, isInviter } = await setupPairing(store)
+const { key } = await setupPairing(store)
 
 const base = new Autobase(store.namespace(key), null, { open, apply })
 await base.ready()

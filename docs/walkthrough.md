@@ -198,11 +198,3 @@ Autobase re-applies and reorders the logs when new data arrives.
 
 - Make sure `type: module` is set in `package.json` to use ESModules.
 - Add a `.gitignore` to exclude `store-*` directories.
-
----
-
-## Final Notes
-
-- Built as a take-home project for Tether’s technical writing + Node.js assessment
-- Fully tested and functional using real-world Pear SDK modules
-- You can extend this with a browser UI or add offline sync
