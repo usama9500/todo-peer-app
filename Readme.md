@@ -40,7 +40,7 @@ To set up the project manually:
 3. Install required packages:
 
    ```bash
-   npm install autobase corestore hyperswarm blind-pairing readline b4a
+   npm install autobase corestore hyperswarm blind-pairing
    ```
 
 4. **Add Source Files in `src/`**
